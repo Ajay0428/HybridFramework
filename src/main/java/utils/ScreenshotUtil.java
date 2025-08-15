@@ -15,7 +15,6 @@ import drivers.DriverFactory;
 
 public class ScreenshotUtil {
 
-	DriverFactory driverFactory = new DriverFactory();
 	WebDriver driver;
 	String timeStamp = new SimpleDateFormat("dd-MMM-yyyy_HH-mm-ss_a").format(new Date());
 
