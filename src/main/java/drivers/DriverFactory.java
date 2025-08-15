@@ -5,6 +5,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -31,7 +32,17 @@ public class DriverFactory {
 			switch (browserName) {
 			case "chrome":
 				WebDriverManager.chromedriver().setup();
-				driver.set(new ChromeDriver());
+				ChromeOptions options = new ChromeOptions();
+
+				// Disable password leak detection prompt
+				options.addArguments("--disable-features=PasswordLeakDetection,PasswordManagerOnboarding");
+				options.addArguments("--user-data-dir=" + System.getProperty("java.io.tmpdir") + "/chrome-profile");
+				options.addArguments("--incognito");
+				options.addArguments("--disable-sync");
+				options.addArguments("--disable-extensions");
+				options.addArguments("--disable-save-password-bubble");
+
+				driver.set(new ChromeDriver(options));
 				break;
 
 			case "edge":
@@ -78,16 +89,16 @@ public class DriverFactory {
 			driver.remove();
 		}
 	}
-	
+
 	public static void main(String[] args) throws IOException {
-		
-        DriverFactory factory = new DriverFactory();
-        ConfigReader reader = new ConfigReader();
-        WebDriver driver = DriverFactory.initializeDriver(reader.getProperty("browser"));
 
-        driver.get("https://www.google.com");
-        System.out.println("Title: " + driver.getTitle());
+		DriverFactory factory = new DriverFactory();
+		ConfigReader reader = new ConfigReader();
+		WebDriver driver = DriverFactory.initializeDriver(reader.getProperty("browser"));
 
-        factory.quitDriver();
-    }
+		driver.get("https://www.google.com");
+		System.out.println("Title: " + driver.getTitle());
+
+		factory.quitDriver();
+	}
 }

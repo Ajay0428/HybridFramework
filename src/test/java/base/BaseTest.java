@@ -28,6 +28,7 @@ public class BaseTest {
 		DriverFactory.initializeDriver(browser);
 		driver = DriverFactory.getDriver();
 		DriverFactory.getDriver().get(config.getProperty("baseUrl"));
+		
 	}
 
 	@AfterMethod
