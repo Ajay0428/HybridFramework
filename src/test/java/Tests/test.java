@@ -6,13 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import utils.RetryAnalyzer;
 import base.BaseTest;
 import drivers.DriverFactory;
 
 public class test extends BaseTest {
 	WebDriver driver;
 
-	@Test
+	@Test(retryAnalyzer = RetryAnalyzer.class)
 	public void ABC() throws InterruptedException, IOException {
 
 		Assert.assertFalse(true);
