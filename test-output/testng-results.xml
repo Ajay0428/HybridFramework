@@ -1,40 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results retried="2" ignored="0" total="3" passed="0" failed="1" skipped="0">
+<testng-results retried="6" ignored="2" total="11" passed="0" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-16T04:27:20 IST" name="Default suite" finished-at="2025-08-16T04:27:35 IST" duration-ms="14755">
+  <suite started-at="2025-08-18T19:49:38 IST" name="Suite" finished-at="2025-08-18T19:49:38 IST" duration-ms="496">
     <groups>
+      <group name="sanity">
+        <method signature="test.ABC2()[pri:0, instance:Tests.test@3c41ed1d]" name="ABC2" class="Tests.test"/>
+        <method signature="test.ABC4()[pri:0, instance:Tests.test@3c41ed1d]" name="ABC4" class="Tests.test"/>
+        <method signature="test.ABC5()[pri:0, instance:Tests.test@3c41ed1d]" name="ABC5" class="Tests.test"/>
+      </group> <!-- sanity -->
     </groups>
-    <test started-at="2025-08-16T04:27:20 IST" name="Default test" finished-at="2025-08-16T04:27:35 IST" duration-ms="14755">
+    <test started-at="2025-08-18T19:49:38 IST" name="Test" finished-at="2025-08-18T19:49:38 IST" duration-ms="496">
       <class name="Tests.test">
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:Tests.test@7c7b252e]" started-at="2025-08-16T04:27:20 IST" name="setup" finished-at="2025-08-16T04:27:26 IST" duration-ms="5462" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void Tests.test.ABC() throws java.lang.InterruptedException,java.io.IOException]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@aced190]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method retried="true" signature="ABC()[pri:0, instance:Tests.test@7c7b252e]" started-at="2025-08-16T04:27:26 IST" name="ABC" finished-at="2025-08-16T04:27:26 IST" duration-ms="18" status="SKIP">
-          <exception class="java.lang.AssertionError">
+        <test-method retried="true" signature="ABC5()[pri:0, instance:Tests.test@3c41ed1d]" started-at="2025-08-18T19:49:38 IST" name="ABC5" finished-at="2025-08-18T19:49:38 IST" duration-ms="36" status="SKIP">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[expected [false] but found [true]]]>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [false] but found [true]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertFalse(Assert.java:67)
-at org.testng.Assert.assertFalse(Assert.java:77)
-at Tests.test.ABC(test.java:19)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+at Tests.test.ABC5(test.java:55)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -45,60 +30,77 @@ at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ABC -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.test@7c7b252e]" started-at="2025-08-16T04:27:26 IST" name="teardown" finished-at="2025-08-16T04:27:26 IST" duration-ms="372" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:Tests.test@7c7b252e]" started-at="2025-08-16T04:27:26 IST" name="setup" finished-at="2025-08-16T04:27:30 IST" duration-ms="4233" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void Tests.test.ABC() throws java.lang.InterruptedException,java.io.IOException]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@aced190]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method retried="true" signature="ABC()[pri:0, instance:Tests.test@7c7b252e]" started-at="2025-08-16T04:27:30 IST" name="ABC" finished-at="2025-08-16T04:27:30 IST" duration-ms="1" status="SKIP">
-          <exception class="java.lang.AssertionError">
+        </test-method> <!-- ABC5 -->
+        <test-method retried="true" signature="ABC2()[pri:0, instance:Tests.test@3c41ed1d]" started-at="2025-08-18T19:49:38 IST" name="ABC2" finished-at="2025-08-18T19:49:38 IST" duration-ms="36" status="SKIP">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[expected [false] but found [true]]]>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [false] but found [true]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertFalse(Assert.java:67)
-at org.testng.Assert.assertFalse(Assert.java:77)
-at Tests.test.ABC(test.java:19)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+at Tests.test.ABC2(test.java:28)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ABC2 -->
+        <test-method retried="true" signature="ABC4()[pri:0, instance:Tests.test@3c41ed1d]" started-at="2025-08-18T19:49:38 IST" name="ABC4" finished-at="2025-08-18T19:49:38 IST" duration-ms="36" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+at Tests.test.ABC4(test.java:46)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ABC4 -->
+        <test-method retried="true" signature="ABC4()[pri:0, instance:Tests.test@3c41ed1d]" started-at="2025-08-18T19:49:38 IST" name="ABC4" finished-at="2025-08-18T19:49:38 IST" duration-ms="3" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+at Tests.test.ABC4(test.java:46)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -109,60 +111,23 @@ at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ABC -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.test@7c7b252e]" started-at="2025-08-16T04:27:30 IST" name="teardown" finished-at="2025-08-16T04:27:31 IST" duration-ms="361" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:Tests.test@7c7b252e]" started-at="2025-08-16T04:27:31 IST" name="setup" finished-at="2025-08-16T04:27:35 IST" duration-ms="3857" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void Tests.test.ABC() throws java.lang.InterruptedException,java.io.IOException]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@aced190]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="ABC()[pri:0, instance:Tests.test@7c7b252e]" started-at="2025-08-16T04:27:35 IST" name="ABC" finished-at="2025-08-16T04:27:35 IST" duration-ms="2" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        </test-method> <!-- ABC4 -->
+        <test-method retried="true" signature="ABC2()[pri:0, instance:Tests.test@3c41ed1d]" started-at="2025-08-18T19:49:38 IST" name="ABC2" finished-at="2025-08-18T19:49:38 IST" duration-ms="6" status="SKIP">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[expected [false] but found [true]]]>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [false] but found [true]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertFalse(Assert.java:67)
-at org.testng.Assert.assertFalse(Assert.java:77)
-at Tests.test.ABC(test.java:19)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+at Tests.test.ABC2(test.java:28)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -173,33 +138,124 @@ at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ABC -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.test@7c7b252e]" started-at="2025-08-16T04:27:35 IST" name="teardown" finished-at="2025-08-16T04:27:35 IST" duration-ms="341" status="PASS">
+        </test-method> <!-- ABC2 -->
+        <test-method retried="true" signature="ABC5()[pri:0, instance:Tests.test@3c41ed1d]" started-at="2025-08-18T19:49:38 IST" name="ABC5" finished-at="2025-08-18T19:49:38 IST" duration-ms="2" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+at Tests.test.ABC5(test.java:55)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teardown -->
+        </test-method> <!-- ABC5 -->
+        <test-method signature="ABC5()[pri:0, instance:Tests.test@3c41ed1d]" started-at="2025-08-18T19:49:38 IST" name="ABC5" finished-at="2025-08-18T19:49:38 IST" duration-ms="7" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+at Tests.test.ABC5(test.java:55)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ABC5 -->
+        <test-method signature="ABC4()[pri:0, instance:Tests.test@3c41ed1d]" started-at="2025-08-18T19:49:38 IST" name="ABC4" finished-at="2025-08-18T19:49:38 IST" duration-ms="3" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+at Tests.test.ABC4(test.java:46)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ABC4 -->
+        <test-method signature="ABC2()[pri:0, instance:Tests.test@3c41ed1d]" started-at="2025-08-18T19:49:38 IST" name="ABC2" finished-at="2025-08-18T19:49:38 IST" duration-ms="7" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+at Tests.test.ABC2(test.java:28)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ABC2 -->
       </class> <!-- Tests.test -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

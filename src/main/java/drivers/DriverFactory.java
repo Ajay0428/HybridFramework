@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
 
-	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+	public static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
 	public static WebDriver getDriver() {
 		return driver.get();
@@ -37,11 +37,14 @@ public class DriverFactory {
 				// Disable password leak detection prompt
 				options.addArguments("--disable-features=PasswordLeakDetection,PasswordManagerOnboarding");
 				options.addArguments("--user-data-dir=" + System.getProperty("java.io.tmpdir") + "/chrome-profile");
-				options.addArguments("--incognito");
+				//options.addArguments("--incognito");
 				options.addArguments("--disable-sync");
 				options.addArguments("--disable-extensions");
 				options.addArguments("--disable-save-password-bubble");
+				@SuppressWarnings("deprecation") String uniqueProfile = System.getProperty("java.io.tmpdir") + "/chrome-profile-" + Thread.currentThread().getId();
+				options.addArguments("--user-data-dir=" + uniqueProfile);
 
+				
 				driver.set(new ChromeDriver(options));
 				break;
 
